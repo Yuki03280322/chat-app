@@ -28,3 +28,5 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name, user_ids: [])
   end
 end
+
+#28 roomの配列に入った:nameと、配列で受け取ったuser_idsの保存を許可してほしい

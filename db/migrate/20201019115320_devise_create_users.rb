@@ -7,6 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :name,               null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      # default:""はdeviseの初期設定であり自分で設定する必要はない
 
       ## Recoverable
       t.string   :reset_password_token

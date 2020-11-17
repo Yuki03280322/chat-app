@@ -7,3 +7,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
+
+#2 信頼できるuserですか？＝ログインしていないのなら、ログイン画面へ
+#3 deviseControllerを動かしますか？
+
+#7 ユーザー登録の時、nameカラムを追加することを許可する

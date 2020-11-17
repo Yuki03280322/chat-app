@@ -3,7 +3,7 @@
   <%=form_with model: @room, local: true do |f|%>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
-        <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+        <%= f.label :name,"チャットルーム名", class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
         <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
@@ -33,3 +33,39 @@
     </div>
   <% end %>
 </div>
+
+<%# 6,16 6のlabel要素のinput要素がrubyの表記になっているので、rubyの書き方に合わせている。input要素と同じ値をlabel要素にも合わせることで、label要素をクリックからinput要素をアクティブにすることが可能%>
+<%# 16 この場合でfor属性を有効にするには、input要素であるselect要素をforで指定することでfor属性を付加することが可能%>
+<%# for属性は、label要素をクリックするとフォームをアクティブ化、また読み上げ機能を実装可能、視覚的に分かりやすくなるといったメリット%>
+<%#? 19 プルダウンの入れ物にroomハッシュの中にあるuser_idsキーの、バリューとなる値を1つずつ全て配列で取得し格納する？（おｋ）%>
+<%#? ↑ なぜこの処理が必要？21で取得したuserモデルの情報で済むのでは？わざわざ[user_ids]をつけなくても[user.name]でも良いのでは？
+<%#  ↑ これにより、選択したuser情報をコントローラーへ送信する仕組みができる。userモデルからだとどれを選択したのかがわからない、[user.name]だと同姓同名で登録されている場合もあるので確実なuser.idを取得する
+<%#  ↑ []によりuser_idキーに対して複数ある値を、1つの配列の中に入れるのではなく、一つ一つを配列[]の中に格納することができる。だから、↑のように選択することが可能。
+<%#  ↑ この情報を取得するために、22行目にvalue=<%= user.id を追加している
+<%#  ↑ ただこれだとログインしているuser_idは送れないので25行目で追記している。type属性にhiddenを指定することで、画面上には表示されないinput要素を作成。
+<%#  ↑ name属性にroom[user_ids][]を指定し、room[user_ids]をキーに対する値を配列で受け取る仕組み
+<%#  ↑ input要素に、name属性は部品の名前を指定、value属性は部品の初期値を指定
+<%# 19 19行目の配列にプルダウンで取得されたuser_idが格納される、idsは中間テーブルに値を保存する時に使われる記法>
+<%# 21 userモデルから条件に一致した（現在のuser_id）レコード以外の値を配列で取得し、それらをブロック変数userとして呼び出す%>
+<%#? 20 value="”は文字の入力はできないよという意味？%>
+<%#  ↑ 選択したuserを入れる受け皿。
+<%# 20 初期値をとくに決めたくない場合は<option value="">のように値が空白のオプションをいちばん上に配置 %>
+<%# ? 22 optionタグ1つにつき、一つの選択肢となる。取得したuserモデルの値の中から、nameとidにvalue属性を1つずつ与えて表示する(この認識で良い？→おｋ) %>
+<%# 25 ここでcurrent_user.idが配列に格納される%>
+
+<%# selectタグのname属性でセレクトボックスに名前をつける
+選択された値をフォームで送信するときには<select name="ここ">の部分でセレクトボックスに名前をつけます。
+
+<>HTML
+<form>
+  <select name="color">
+    <option value="red">赤</option>
+    <option value="blue">青</option>
+  </select>
+  <button type="submit">送信する</button>
+</form>
+
+name="color"は、このセレクトボックスの名前がcolorであることを表します。フォームを送信したときにcolor=選択された値のような形で送られるため、受け取った側はどの値が、どの入力欄に対応しているのか分かります。
+
+たとえば、赤（value="red"）を選択して送信するとcolor=redという情報が送られます。 %>
+

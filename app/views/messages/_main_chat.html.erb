@@ -25,3 +25,11 @@
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>
+
+<%#
+9 method :delete+@roomという引数+room_pathに該当するルートはrooms#destroyであり、roomsコントローラーが起動された
+9 パスはroomコントローラーのdestroyアクションを起動し、どのroomかはroomコントローラーのindexで定義された@roomを使用
+18 modelで2つのインスタンス変数が設定されているのは、messageのルーティングがネストされているから
+   あるチャットルームに属しているメッセージという親子関係にある為、
+   @roomには指定のチャットルームのレコード情報、@messageにはMessageモデルの空のインスタンスを予めセット
+   %>
