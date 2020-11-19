@@ -1,79 +1,52 @@
+# テーブル設計
 
-# ArtistMatch_app
-似顔絵を絵師さんに依頼したい時、**自分の求めている絵を得意とする絵師さんをマッチングする**アプリケーション
+## users テーブル
 
-↓↓こんな時に使う↓↓
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-1.似顔絵をプレゼントしたい！自分の求めている絵を書ける人を見つけたいけど、どこから探そうか・・？
+### Association
 
-2.絵師として少しでも多くの人に自分の絵を求めて欲しい！
+- has_many :room_users
+- has_many :rooms, through: room_users
+- has_many :messages
 
-# Features
-**自分の求めている似顔絵を書くことを得意とする絵師さんを10秒でマッチング**
+## rooms テーブル
 
-実装後GIF表示
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
-# How to use
-【トップページ】
- * 目的をクリック
+### Association
 
- <実装後表示>
+- has_many :room_users
+- has_many :users, through: room_users
+- has_many :messages
 
-【マッチングページ】
- * 自分の求める似顔絵に近い絵をクリック
- * 3回目のクリック後マッチングした絵師さんページへ遷移
+## room_users テーブル
 
- <実装後表示>
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
 
-【絵師さんページ】
- * 仕事依頼方法やプロフィール、作成した絵を表示
+### Association
 
- <実装後表示>
+- belongs_to :room
+- belongs_to :user
 
-# Technology used
-* 非同期通信による画像切り替え
+## messages テーブル
 
-<実装後表示>
-* 画像ズーム/ズームアウト、スクロール
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
 
-<実装後表示>
+### Association
 
-実装完了後、使用したライブラリや技術を一覧画像作成
-
-# DEMO
-ユーザーへの提供→**素早くお好みの絵師さんをご紹介**
-
-絵師さんへの提供→**自分の得意とする絵をランキングに左右されずに選ばれる・知ってもらえる**
-
-<img src="https://user-images.githubusercontent.com/72023246/99610346-fd497000-2a54-11eb-981b-0de242baeb3b.png" width="300px"><img src="https://user-images.githubusercontent.com/72023246/99610275-d8ed9380-2a54-11eb-92de-1434be38ad6c.jpeg" width="200px">&emsp;&emsp;&emsp;&emsp;<img src="https://user-images.githubusercontent.com/72023246/99610098-7f856480-2a54-11eb-87f3-915a14f2b3b3.jpg" width="200px">
-
-詳細実際の挙動は実装後掲載
-
-# Solve the problems
-* スピーディーに絵師さんとマッチング
-* ランキングやレビューではなく、あくまで自分の求める似顔絵を描ける絵師さんとマッチング
-
-# ER
-![f9b9b1652db4b69b9c6ad8d84cc78eff](https://user-images.githubusercontent.com/72023246/99548632-330e3a80-29fc-11eb-8af6-6808051dd417.png)
-
-# Scheduled to be implemented
-- [ ] マッチング機能の強化
-
-より選択肢を増やし、マッチングの精度を向上
-
-- [ ] 要望フォームの実装
-
-ユーザーの期待したマッチングが出来なかった時、その旨を記入頂き改善を目指す
-
-
-# Requirement
-* rails version: 6.0.3.4
-* Ruby version: 2.6.5
-* JavaScript
-* MySQL
-* devise
-* Font Awesome
-
-
-
-
+- belongs_to :room
+- belongs_to :user
