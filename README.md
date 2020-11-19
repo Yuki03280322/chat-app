@@ -32,6 +32,7 @@
 
 # Technology used
 * 非同期通信による画像切り替え
+
 <マッチングページGIF>
 * 画像ズーム/ズームアウト、スクロール
 
@@ -43,7 +44,10 @@
 
 絵師さんへの提供→**自分の得意とする絵をランキングに左右されずに選ばれる・知ってもらえる**
 
-![publicdomainq-0013868mwf](https://user-images.githubusercontent.com/72023246/99519333-14487d80-29d5-11eb-9cc8-71b97f13f3f6.jpg width=50%)![握手の無料アイコン素材 3](https://user-images.githubusercontent.com/72023246/99518377-d1d27100-29d3-11eb-827d-5f396d969f1d.jpeg width=50%)![butsuyoku_man-267x300](https://user-images.githubusercontent.com/72023246/99519376-288c7a80-29d5-11eb-9c5a-59dc44a04572.png width=50%)
+<img src="https://user-images.githubusercontent.com/72023246/99610346-fd497000-2a54-11eb-981b-0de242baeb3b.png" width="200px">
+<img src="https://user-images.githubusercontent.com/72023246/99610275-d8ed9380-2a54-11eb-92de-1434be38ad6c.jpeg" width="200px">
+<img src="https://user-images.githubusercontent.com/72023246/99610098-7f856480-2a54-11eb-87f3-915a14f2b3b3.jpg" width="200px">
+
 詳細実際の挙動は実装後掲載
 
 # Solve the problems
