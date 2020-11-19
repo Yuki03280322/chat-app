@@ -16,28 +16,34 @@
 # How to use
 【トップページ】
  * 目的をクリック
+
  <実装後表示>
 
 【マッチングページ】
  * 自分の求める似顔絵に近い絵をクリック
  * 3回目のクリック後マッチングした絵師さんページへ遷移
+
    <実装後表示>
 
 【絵師さんページ】
  * 仕事依頼方法やプロフィール、作成した絵を表示
+
  <実装後表示>
 
 # Technology used
 * 非同期通信による画像切り替え
 <マッチングページGIF>
 * 画像ズーム/ズームアウト、スクロール
+
 <実際のGIF>
 
 
 # DEMO
 ユーザーへの提供→**素早くお好みの絵師さんをご紹介**
+
 絵師さんへの提供→**自分の得意とする絵をランキングに左右されずに選ばれる・知ってもらえる**
-![publicdomainq-0013868mwf](https://user-images.githubusercontent.com/72023246/99519333-14487d80-29d5-11eb-9cc8-71b97f13f3f6.jpg)![握手の無料アイコン素材 3](https://user-images.githubusercontent.com/72023246/99518377-d1d27100-29d3-11eb-827d-5f396d969f1d.jpeg)![butsuyoku_man-267x300](https://user-images.githubusercontent.com/72023246/99519376-288c7a80-29d5-11eb-9c5a-59dc44a04572.png)
+
+![publicdomainq-0013868mwf](https://user-images.githubusercontent.com/72023246/99519333-14487d80-29d5-11eb-9cc8-71b97f13f3f6.jpg width=50%)![握手の無料アイコン素材 3](https://user-images.githubusercontent.com/72023246/99518377-d1d27100-29d3-11eb-827d-5f396d969f1d.jpeg width=50%)![butsuyoku_man-267x300](https://user-images.githubusercontent.com/72023246/99519376-288c7a80-29d5-11eb-9c5a-59dc44a04572.png width=50%)
 詳細実際の挙動は実装後掲載
 
 # Solve the problems
