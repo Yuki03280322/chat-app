@@ -44,7 +44,7 @@
 
 絵師さんへの提供→**自分の得意とする絵をランキングに左右されずに選ばれる・知ってもらえる**
 
-<img src="https://user-images.githubusercontent.com/72023246/99610346-fd497000-2a54-11eb-981b-0de242baeb3b.png" width="200px"><img src="https://user-images.githubusercontent.com/72023246/99610275-d8ed9380-2a54-11eb-92de-1434be38ad6c.jpeg" width="200px"><img src="https://user-images.githubusercontent.com/72023246/99610098-7f856480-2a54-11eb-87f3-915a14f2b3b3.jpg" width="200px">
+<img src="https://user-images.githubusercontent.com/72023246/99610346-fd497000-2a54-11eb-981b-0de242baeb3b.png" width="200px" height="120%"><img src="https://user-images.githubusercontent.com/72023246/99610275-d8ed9380-2a54-11eb-92de-1434be38ad6c.jpeg" width="200px"><img src="https://user-images.githubusercontent.com/72023246/99610098-7f856480-2a54-11eb-87f3-915a14f2b3b3.jpg" width="200px">
 
 詳細実際の挙動は実装後掲載
 
